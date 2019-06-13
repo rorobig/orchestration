@@ -1,4 +1,8 @@
 /etc/munin/apache24.conf:
+  file.comment:
+      - regex: (.*?)
+
+/etc/munin/apache24.conf:
   file.append:
     - text: | 
          Alias /munin /var/cache/munin/www

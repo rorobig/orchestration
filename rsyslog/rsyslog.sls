@@ -1,0 +1,2 @@
+rsyslog:
+	pkg.installed
