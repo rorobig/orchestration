@@ -1,0 +1,13 @@
+mdb:
+  cmd.run:
+    - name: 'sudo docker pull mariadb'
+    - name: 'docker run -e MYSQL_ROOT_PASSWORD=kwidama -e MYSQL_USER=roro -e MYSQL_PASSWORD=kwidama -e MYSQL_DATABASE=wordpress_db -v /root/wordpress/database:/var/lib/mysql --name wordpressdb -d mariadb
+'
+
+
+
+mdb:
+  cmd.run:
+    - name: 'docker pull wordpress:latest'
+    - name: 'docker run -e WORDPRESS_DB_USER=rorobig -e WORDPRESS_DB_PASSWORD=kwidama -e WORDPRESS_DB_NAME=wordpress_db -p 8081:80 -v /root/wordpress/html:/var/www/html --link wordpressdb:mysql --name wpcontainer -d wordpress'
+
